@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Karadana | Software Engineer</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">MK</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/mehmet-karadana34" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/MehmetKARADANA" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img th:src="@{/images/profile.jpg}" alt="Mehmet Karadana">
+                    </div>
+                    <div class="github-preview">
+                        <img th:src="@{/images/github-preview.png}" alt="GitHub Profile Preview">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h1>Mehmet Karadana</h1>
+                    <p class="subtitle">Software Engineer</p>
+                    <p class="bio">Software Engineer with 1 year of experience in building scalable mobile and backend applications. Skilled in Kotlin (Jetpack Compose), Java, and .NET. Passionate about clean architecture and full-cycle development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="TSK PERTEM Mobile App">
+                    </div>
+                    <div class="project-info">
+                        <h3>TSK PERTEM Mobile App</h3>
+                        <p>Mobile app for Turkish Armed Forces personnel with Firebase integration.</p>
+                        <div class="project-tags">
+                            <span>Kotlin</span>
+                            <span>Firebase</span>
+                            <span>Android</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MehmetKARADANA/TSK_PERSONEL_TEMIN" target="_blank" rel="noopener noreferrer" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Game of Secret">
+                    </div>
+                    <div class="project-info">
+                        <h3>Game of Secret</h3>
+                        <p>Kotlin-based game app with random truth/dare prompts built using Jetpack Compose.</p>
+                        <div class="project-tags">
+                            <span>Kotlin</span>
+                            <span>Jetpack Compose</span>
+                            <span>Android</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MehmetKARADANA/GAME_OF_SECRET" target="_blank" rel="noopener noreferrer" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="TÜBİTAK Research">
+                    </div>
+                    <div class="project-info">
+                        <h3>TÜBİTAK 2209-A Project</h3>
+                        <p>NLP & ML-based research on misinformation detection using Twitter data.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>ML</span>
+                            <span>NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MehmetKARADANA/sample-nlp" target="_blank" rel="noopener noreferrer" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder Projects -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="E-Commerce Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack e-commerce solution with real-time inventory management.</p>
+                        <div class="project-tags">
+                            <span>Spring Boot</span>
+                            <span>React</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Task Management System">
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management System</h3>
+                        <p>Collaborative task management with real-time updates and team features.</p>
+                        <div class="project-tags">
+                            <span>Kotlin</span>
+                            <span>Spring Boot</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="API Gateway">
+                    </div>
+                    <div class="project-info">
+                        <h3>API Gateway Service</h3>
+                        <p>Microservices API gateway with authentication and rate limiting.</p>
+                        <div class="project-tags">
+                            <span>Go</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Real-time Chat">
+                    </div>
+                    <div class="project-info">
+                        <h3>Real-time Chat Application</h3>
+                        <p>WebSocket-based chat with end-to-end encryption.</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                            <span>WebSocket</span>
+                            <span>React</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Weather App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Forecast App</h3>
+                        <p>Mobile weather app with location-based forecasts.</p>
+                        <div class="project-tags">
+                            <span>Kotlin</span>
+                            <span>Retrofit</span>
+                            <span>Room</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>Blog Platform</h3>
+                        <p>Content management system with markdown support.</p>
+                        <div class="project-tags">
+                            <span>.NET</span>
+                            <span>React</span>
+                            <span>MSSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x300" alt="File Sharing">
+                    </div>
+                    <div class="project-info">
+                        <h3>Secure File Sharing</h3>
+                        <p>Encrypted file sharing platform with access control.</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                            <span>Spring Security</span>
+                            <span>AWS S3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Junior Backend Developer</h3>
+                        <h4>Orion Innovation Turkey</h4>
+                        <p class="timeline-date">Jul 2024 – Dec 2024</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineer Intern</h3>
+                        <h4>Phi Software</h4>
+                        <p class="timeline-date">Jul 2023 – Aug 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h3>Karadeniz Technical University</h3>
+                    <p class="degree">BSc in Software Engineering</p>
+                    <p class="date">2021 – 2025</p>
+                </div>
+                <div class="education-item">
+                    <h3>Antakya Anadolu Lisesi</h3>
+                    <p class="degree">High School</p>
+                    <p class="date">2017 – 2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form" th:action="@{/contact}" method="post">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/mehmet-karadana34" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/MehmetKARADANA" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 Mehmet Karadana. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html> 
