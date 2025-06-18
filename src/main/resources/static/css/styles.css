@@ -11,6 +11,10 @@
     --transition: all 0.3s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 [data-theme="dark"] {
     --primary-color: #3b82f6;
     --secondary-color: #60a5fa;
@@ -219,8 +223,10 @@ body {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 2rem;
+    justify-items: center;
+    align-items: stretch;
 }
 
 .project-card {
@@ -229,6 +235,11 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 20px var(--shadow-color);
     transition: var(--transition);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
 }
 
 .project-card:hover {
@@ -254,39 +265,57 @@ body {
 }
 
 .project-info {
-    padding: 1.5rem;
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .project-info h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
     color: var(--text-color);
+    margin: 0;
 }
 
 .project-info p {
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
 }
 
 .project-tags span {
-    background-color: var(--hover-color);
-    color: var(--primary-color);
+    background-color: var(--card-background);
+    color: var(--text-color);
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
     font-size: 0.875rem;
-    font-weight: 500;
+    border: 1px solid var(--border-color);
 }
 
 .project-links {
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-links a {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+.project-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 /* Experience Section */
@@ -422,50 +451,116 @@ body {
     font-weight: 500;
 }
 
-/* Contact Section */
+/* Contact Section Modern Card Styles */
 .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 4rem 0;
-    background-color: var(--background-color);
+    background: var(--card-background);
 }
 
-.contact h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--text-color);
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
+.contact-card {
+    background: var(--background-color);
+    border-radius: 16px;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 400px;
     width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 0.5rem;
-    background-color: var(--card-background);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+html.dark .contact-card {
+    background: #23272f;
+}
+
+.contact-divider {
+    margin-bottom: 1.2rem;
+}
+
+.contact-divider i {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    opacity: 0.85;
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.contact-desc {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.9rem 2.2rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px 0 rgba(59,130,246,0.10);
+    margin-bottom: 2.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.3s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px 0 rgba(59,130,246,0.18);
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 2.2rem;
+    margin-top: 0.5rem;
+}
+
+.contact-social-icon {
+    font-size: 2.1rem;
     color: var(--text-color);
-    font-size: 1rem;
-    transition: var(--transition);
+    transition: color 0.2s, transform 0.18s, text-shadow 0.18s;
+    display: flex;
+    align-items: center;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px var(--hover-color);
+.contact-social-icon:hover {
+    color: var(--primary-color);
+    transform: translateY(-4px) scale(1.13);
+    text-shadow: 0 2px 12px var(--primary-color);
 }
 
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
+@media (max-width: 600px) {
+    .contact-card {
+        padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+        max-width: 98vw;
+    }
+    .contact-title {
+        font-size: 1.5rem;
+    }
+    .contact-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+    .contact-social-icon {
+        font-size: 1.5rem;
+    }
 }
 
 /* Footer */
@@ -641,5 +736,549 @@ body {
 
     .project-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Social Previews Section */
+.social-previews {
+    padding: 2rem 0;
+    background-color: var(--background-color);
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.preview-card {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.preview-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.preview-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    background-color: var(--card-background);
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.preview-info {
+    flex: 1;
+}
+
+.preview-info h3 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.preview-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0.25rem 0 0;
+}
+
+.preview-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+    margin-top: auto;
+}
+
+.preview-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.preview-button i {
+    font-size: 1.1rem;
+}
+
+/* Platform-specific styles */
+.preview-card.github .preview-button {
+    background-color: #24292e;
+}
+
+.preview-card.github .preview-button:hover {
+    background-color: #2f363d;
+}
+
+.preview-card.linkedin .preview-button {
+    background-color: #0077b5;
+}
+
+.preview-card.linkedin .preview-button:hover {
+    background-color: #006399;
+}
+
+.preview-card.medium .preview-button {
+    background-color: #00ab6c;
+}
+
+.preview-card.medium .preview-button:hover {
+    background-color: #009e5d;
+}
+
+@media (max-width: 768px) {
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CV Section Styles */
+.cv-section {
+    padding: 4rem 0 3rem 0;
+    background: var(--card-background);
+}
+.cv-title {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+.cv-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2.2rem;
+    flex-wrap: wrap;
+}
+.cv-btn {
+    font-size: 1.08rem;
+    font-weight: 600;
+    padding: 0.85rem 2.1rem;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(59,130,246,0.10);
+    transition: transform 0.18s, box-shadow 0.18s, background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.cv-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px 0 rgba(59,130,246,0.18);
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+.cv-btn.secondary {
+    background: var(--background-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: none;
+}
+.cv-btn.secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+.cv-embed-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    background: var(--background-color);
+    transition: background 0.3s;
+}
+.cv-iframe {
+    width: 100%;
+    min-height: 350px;
+    border: none;
+    background: var(--background-color);
+    transition: background 0.3s;
+    display: block;
+}
+html.dark .cv-embed-wrapper, html.dark .cv-iframe {
+    background: #23272f;
+}
+@media (max-width: 900px) {
+    .cv-embed-wrapper {
+        max-width: 98vw;
+    }
+}
+@media (max-width: 600px) {
+    .cv-section {
+        padding: 2rem 0 1.5rem 0;
+    }
+    .cv-title {
+        font-size: 1.3rem;
+    }
+    .cv-btn {
+        font-size: 0.98rem;
+        padding: 0.7rem 1.1rem;
+    }
+    .cv-embed-wrapper {
+        border-radius: 6px;
+    }
+    .cv-iframe {
+        min-height: 220px;
+        height: 220px;
+    }
+}
+
+/* Project Card Preview Images */
+.project-image-preview {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+    margin: 0 auto;
+    display: block;
+    background: #f3f4f6;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+
+.see-more-card .project-links {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.see-more-card .btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .project-image-preview {
+        max-width: 100%;
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-image-preview {
+        height: 120px;
+        border-radius: 0.7rem 0.7rem 0 0;
+    }
+    .project-card .project-info {
+        padding: 0.7rem 0.7rem 1rem 0.7rem;
+    }
+}
+
+/* GitHub Profile Card Styles in Projects */
+.github-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1.2rem;
+    min-height: 420px;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+.github-profile-card:hover {
+    box-shadow: 0 8px 32px 0 rgba(36,41,46,0.13);
+    transform: translateY(-6px) scale(1.025);
+}
+.github-avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.1rem;
+}
+.github-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    background: #fff;
+    box-shadow: 0 2px 12px 0 rgba(36,41,46,0.10);
+    transition: border-color 0.2s;
+}
+html.dark .github-avatar {
+    background: #23272f;
+}
+.github-username {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    text-align: center;
+}
+.github-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 1rem;
+    padding: 0.3rem 1.1rem;
+    margin-bottom: 1.1rem;
+    margin-top: 0.2rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 6px 0 rgba(36,41,46,0.08);
+}
+.github-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.18s, transform 0.18s;
+}
+.github-btn:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    box-shadow: 0 4px 18px 0 rgba(36,41,46,0.13);
+    transform: scale(1.06);
+}
+@media (max-width: 900px) {
+    .github-avatar-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+    .github-avatar {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width: 600px) {
+    .github-profile-card {
+        min-height: 320px;
+        padding-top: 1.2rem;
+    }
+    .github-avatar-wrapper {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0.7rem;
+    }
+    .github-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .github-badge {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.7rem;
+    }
+}
+
+/* GitHub Realistic Profile Preview Card Styles */
+.github-real-preview-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1.2rem;
+    min-height: 480px;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+.github-real-preview-card:hover {
+    box-shadow: 0 8px 32px 0 rgba(36,41,46,0.13);
+    transform: translateY(-6px) scale(1.025);
+}
+.github-real-preview-card .github-avatar-wrapper {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 1.1rem;
+}
+.github-real-preview-card .github-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    background: #fff;
+    box-shadow: 0 2px 12px 0 rgba(36,41,46,0.10);
+    transition: border-color 0.2s;
+}
+html.dark .github-real-preview-card .github-avatar {
+    background: #23272f;
+}
+.github-real-preview-card .github-real-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.1rem;
+    text-align: center;
+}
+.github-real-preview-card .github-username {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+.github-real-preview-card .github-bio {
+    font-size: 0.98rem;
+    color: var(--text-light);
+    margin-bottom: 1.1rem;
+    text-align: center;
+}
+.github-pinned-projects {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.github-pinned-project {
+    background: var(--card-background);
+    border-radius: 0.7rem;
+    padding: 0.7rem 1rem 0.6rem 1rem;
+    box-shadow: 0 1px 6px 0 rgba(36,41,46,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border: 1px solid var(--border-color);
+    transition: background 0.2s, border-color 0.2s;
+}
+html.dark .github-pinned-project {
+    background: #23272f;
+    border-color: #374151;
+}
+.github-pinned-title {
+    font-size: 1.01rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.github-star {
+    font-size: 0.97rem;
+    color: #fbbf24;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-left: 0.5rem;
+}
+.github-pinned-desc {
+    font-size: 0.97rem;
+    color: var(--text-light);
+    margin-left: 0.1rem;
+}
+@media (max-width: 900px) {
+    .github-real-preview-card .github-avatar-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    .github-real-preview-card .github-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 600px) {
+    .github-real-preview-card {
+        min-height: 320px;
+        padding-top: 1.2rem;
+    }
+    .github-pinned-projects {
+        gap: 0.4rem;
+    }
+    .github-pinned-project {
+        padding: 0.5rem 0.6rem 0.4rem 0.6rem;
+    }
+}
+
+/* Improved Project Grid Layout */
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+}
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Enhanced GitHub Repo Badges (Diğer Projelerim) */
+.github-more-repos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 1.1rem 0 0.7rem 0;
+}
+.github-repo-badge {
+    display: inline-block;
+    background: #fff;
+    color: #1a73e8;
+    font-size: 0.98rem;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 2px solid #1a73e8;
+    padding: 8px 14px;
+    margin: 6px;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s, border 0.18s, box-shadow 0.18s, transform 0.18s;
+    line-height: 1.7;
+    box-shadow: none;
+}
+.github-repo-badge:hover {
+    background: #1a73e8;
+    color: #fff;
+    border-color: #1a73e8;
+    box-shadow: 0 2px 10px 0 rgba(26,115,232,0.13);
+    transform: scale(1.07);
+}
+html.dark .github-repo-badge {
+    background: #23272f;
+    color: #1a73e8;
+    border: 2px solid #1a73e8;
+}
+@media (max-width: 600px) {
+    .github-more-repos {
+        margin: 0.7rem 0 0.4rem 0;
+    }
+    .github-repo-badge {
+        font-size: 0.89rem;
+        padding: 6px 10px;
+        margin: 4px;
     }
 } 
