@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class GithubService {
     private static final String GITHUB_API_URL = "https://api.github.com/graphql";
-    private static final String GITHUB_TOKEN = "YOUR_GITHUB_TOKEN_HERE"; // TODO: Replace with your token
+    private static final String GITHUB_TOKEN = "YOUR_GITHUB_TOKEN_HERE";
 
     public List<GithubPinnedRepo> getPinnedRepos(String username) {
         RestTemplate restTemplate = new RestTemplate();
